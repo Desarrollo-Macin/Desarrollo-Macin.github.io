@@ -430,6 +430,9 @@
     height: 200px;
     width: 300px;
     zoom: 1.2;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
   }
   
   .main {
