@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte Técnico - Holmes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@fortawesome/fontawesome-free/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Barra de navegación -->
+  <nav class="bg-gray-300 text-white p-4 flex items-center justify-between">
+    <div class="flex items-center">
+      <img src="media\nuevo_logo_completo.png" alt="Logo DGOC" class="h-16 w-auto mr-4 ">
+    </div>
+    
+    <div class="flex items-center gap-2">
+      <img src="media\holmes_small.png" alt="Logo Holmes" class="h-8 w-8 mask-alpha">
+      <span class="text-black text-4xl font-bold text-right">Holmes</span>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button onclick="limpiarLocalStorage()" 
+              class="bg-orange-200 hover:bg-orange-700 px-3 py-1 rounded text-white text-sm">
+        Restablecer
+      </button>
+      <span class="text-lg text-black font-bold">Nombre de Usuario</span>
+      
+      <!-- boton Editar perfil -->
+      <button
+  class="group flex items-center justify-start w-8 h-8 bg-blue-500 rounded-full cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-32 hover:rounded-lg active:translate-x-1 active:translate-y-1"
+>
+  <div
+    class="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3"
+  >
+    <svg
+    class="lucide lucide-settings w-6 h-6 text-blue-500 hover:text-white transition-colors duration-200"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="white"
+    viewBox="0 0 24 24"
+    height="24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+    ></path>
+    <circle r="3" cy="12" cx="12"></circle>
+  </svg>
+  </div>
+  <div
+    class="absolute right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+  >
+    Mi Perfil
+  </div>
+</button>
+      
+      <!-- boton salir --> 
+<button
+  class="group flex items-center justify-start w-8 h-8 bg-red-600 rounded-full cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-32 hover:rounded-lg active:translate-x-1 active:translate-y-1"
+>
+  <div
+    class="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3"
+  >
+    <svg class="w-4 h-4" viewBox="0 0 512 512" fill="white">
+      <path
+        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+      ></path>
+    </svg>
+  </div>
+  <div
+    class="absolute right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+  >Salir...
+  </div>
+</button>
+
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <main class="p-4 grid grid-cols-1 lg:grid-cols-1 gap-4">
+
+    <!-- Formulario de nuevo reporte -->
+    <section class="bg-white p-4 rounded shadow h-min">
+      <h2 class="text-5xl font-bold mb-2">Nuevo Reporte</h2>
+      <form id="reporteForm">
+        <div class="mb-2 ">
+          <label class="block text-sm font-medium"><span class="text-gray-700 text-xs ">Solicitud de atención técnica o reporte de incidencias a la Coordinación de Informática</span></label>
+          <textarea id="descripcion" required 
+                    class="w-full p-2 border rounded-xl mt-1 " 
+                    rows="6"
+                    minlength="10"
+                    maxlength="500"
+                    placeholder="Describa con claridad el servicio que necesita o el problema que presenta. Indique qué sucede, desde cuándo ocurre y cualquier detalle que pueda ayudarnos a entender mejor la situación."></textarea>
+          <div id="errorMsg" class="text-red-600 text-sm mt-1 hidden">
+            La descripción debe tener al menos 10 caracteres
+          </div>
+        </div>
+        <div class="place-items-center flex flex-col gap-2">
+            <button type="submit" 
+                class=" w-5/6 bg-blue-500 text-white px-4 py-2 rounded-xl 
+                hover:bg-blue-700  hover:scale-105 duration-200 hover:drop-shadow-2xl hover:shadow-[#7dd3fc] hover:cursor-pointer">
+          Enviar Reporte
+        </button>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- Tabla de reportes -->
+    <section class="lg:col-span-2 bg-white p-4 rounded shadow overflow-hidden">
+      <h2 class="text-4xl font-bold mb-2">Historial de Reportes</h2>
+
+      <!-- Controles -->
+      <div class="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+        <div class="text-sm">
+          Mostrar:
+          <select id="perPage" class="border rounded px-2 py-1">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+          reportes
+        </div>
+        <div class="text-sm">
+          <input type="text" id="busqueda" placeholder="Buscar reportes..." 
+                 class="border rounded px-2 py-1 w-full sm:w-48">
+        </div>
+      </div>
+
+      <!-- Tabla -->
+      <div class="overflow-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-gray-200 text-left">
+              <th class="p-2 cursor-pointer" onclick="sortTable('folio')">Folio ▲▼</th>
+              <th class="cursor-pointer" onclick="sortTable('fecha')">Fecha ▲▼</th>
+              <th>Descripción</th>
+              <th class="cursor-pointer" onclick="sortTable('tecnico')">Técnico ▲▼</th>
+              <th class="w-20">Chat</th>
+              <th>Seguimiento</th>
+              <th class="cursor-pointer" onclick="sortTable('estatus')">Estatus ▲▼</th>
+            </tr>
+          </thead>
+          <tbody id="tablaReportes"></tbody>
+        </table>
+      </div>
+
+      <!-- Paginación -->
+      <div class="flex justify-between items-center mt-4 text-sm">
+        <button id="prevPage" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400 disabled:opacity-50">Anterior</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400 disabled:opacity-50">Siguiente</button>
+      </div>
+    </section>
+    <!-- Footer -->
+     <button
+  class="group relative cursor-pointer outline-none border-none rounded-full flex flex-row items-center justify-center h-12 w-12 hover:!w-[100px] transition-all duration-[0.75s] before:content-[''] before:absolute before:w-full before:h-full before:inset-0 before:bg-[linear-gradient(130deg,#7209d4,#2832d4_33%,#00a5b2)] before:ring-4 before:ring-offset-4 before:ring-[#2832d4] before:rounded-full before:transition before:duration-300 before:ring-offset-[#fff] hover:before:scale-105 active:before:scale-95 text-white"
+>
+  <svg
+    fill="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute left-2 group-hover:left-1.5 group-active:left-[10px] duration-300 transition-[left] z-10 w-8 h-8 text-white"
+  >
+    <path
+      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+    ></path>
+  </svg>
+  <span
+    class="absolute right-1.5 text-[15px] font-semibold [--w:calc(100%-48px)] w-[--w] max-w-[--w] overflow-hidden flex items-center justify-end -z-[1] group-hover:z-[9] pointer-events-none select-none opacity-0 group-hover:opacity-100 text-transparent group-hover:text-inherit group-active:right-2 transition-all duration-[2s] group-hover:duration-300 group-active:scale-[0.85]"
+    >Soy Tecnico</span
+  >
+</button>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const tabla = document.getElementById("tablaReportes");
+    const form = document.getElementById("reporteForm");
+    const descripcionInput = document.getElementById("descripcion");
+    const perPageSelect = document.getElementById("perPage");
+    const pageInfo = document.getElementById("pageInfo");
+    const prevBtn = document.getElementById("prevPage");
+    const nextBtn = document.getElementById("nextPage");
+    const busquedaInput = document.getElementById("busqueda");
+    const errorMsg = document.getElementById("errorMsg");
+
+    // Cargar datos de localStorage o inicializar
+    let reportes = JSON.parse(localStorage.getItem('reportes')) || [];
+    let folioActual = reportes.length > 0 
+      ? Math.max(...reportes.map(r => parseInt(r.folio))) + 1 
+      : 130;
+
+    let currentPage = 1;
+    let perPage = parseInt(perPageSelect.value);
+    let sortField = 'fecha';
+    let sortDirection = 'desc';
+
+    // Técnicos disponibles
+    const tecnicos = [
+      'Mtro.Splinter',
+      'Leonardo',
+      'Raphael',
+      'Miguel Ángel',
+      'Donatello'
+    ];
+
+    // Formatear fechas
+    function formatoFecha(fecha) {
+      const opciones = { day: '2-digit', month: '2-digit', year: 'numeric' };
+      return new Date(fecha).toLocaleDateString('es-MX', opciones);
+    }
+
+    // Badge de estatus
+    function estatusBadge(estatus) {
+      const color = {
+        'Pendiente de asignación': 'bg-gray-400/70 rounded-xl',
+        'En Progreso': 'bg-yellow-500/70 rounded-xl',
+        'Espera de Refacciones': 'bg-orange-500/70 rounded-xl',
+        'Resuelto': 'bg-green-600/70 rounded-xl',
+        'Cancelado': 'bg-red-600/70 rounded-xl'
+      }[estatus] || 'bg-gray-400/70 rounded-xl';
+      
+      return `<span class="text-xs px-2 py-1 rounded text-white ${color}">${estatus}</span>`;
+    }
+
+    // Ordenar reportes
+    function sortTable(field) {
+      if (sortField === field) {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortField = field;
+        sortDirection = 'asc';
+      }
+      renderTabla();
+    }
+
+    // Filtrar y paginar reportes
+    function getFilteredData() {
+      const searchTerm = busquedaInput.value.toLowerCase();
+      return reportes.filter(r => 
+        r.folio.toLowerCase().includes(searchTerm) ||
+        r.descripcion.toLowerCase().includes(searchTerm) ||
+        r.tecnico.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // Renderizar tabla con chat condicional
+    function renderTabla() {
+      const filtered = getFilteredData();
+      
+      // Ordenar
+      const sorted = filtered.sort((a, b) => {
+        const valA = a[sortField];
+        const valB = b[sortField];
+        
+        if (sortField === 'fecha') {
+          return sortDirection === 'asc' 
+            ? new Date(a.fecha) - new Date(b.fecha)
+            : new Date(b.fecha) - new Date(a.fecha);
+        }
+        
+        return sortDirection === 'asc'
+          ? valA.localeCompare(valB)
+          : valB.localeCompare(valA);
+      });
+
+      // Paginar
+      const start = (currentPage - 1) * perPage;
+      const end = start + perPage;
+      const paginated = sorted.slice(start, end);
+
+      // Generar filas con chat condicional
+      tabla.innerHTML = paginated.map(r => {
+        const chatActivo = ['En Progreso', 'Espera de Refacciones', 'Pendiente de asignación'].includes(r.estatus);
+        return `
+        <tr class="border-t hover:bg-gray-50">
+          <td class="p-2">${r.folio}</td>
+          <td>${formatoFecha(r.fecha)}</td>
+          <td class="max-w-[200px] truncate" title="${r.descripcion}">${r.descripcion}</td>
+          <td>${r.tecnico}</td>
+          <td class="text-center relative">
+            <button ${chatActivo ? `onclick="abrirChat('${r.folio}')"` : ''}
+                    class="${chatActivo ? 'text-blue-600 hover:text-blue-800 cursor-pointer' : 'text-gray-400 cursor-not-allowed'} 
+                    p-1 rounded-full hover:bg-blue-100 relative"
+                    title="${!chatActivo ? 'Chat disponible solo para: En Progreso, Espera de Refacciones o Pendiente de asignación' : 'Abrir chat'}">
+              <i class="fas fa-comment-dots text-lg"></i>
+              ${chatActivo && r.mensajesNoLeidos > 0 ? `
+                <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs 
+                      rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+                  ${r.mensajesNoLeidos}
+                </span>
+              ` : ''}
+            </button>
+          </td>
+          <td>${r.seguimiento}</td>
+          <td>${estatusBadge(r.estatus)}</td>
+        </tr>
+      `}).join('');
+
+      // Actualizar paginación
+      const totalPages = Math.ceil(sorted.length / perPage);
+      pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+      // Guardar en localStorage
+      localStorage.setItem('reportes', JSON.stringify(reportes));
+    }
+
+    // Función para el chat con validación de estatus
+    function abrirChat(folio) {
+      const reporte = reportes.find(r => r.folio === folio);
+      const estatusPermitidos = ['En Progreso', 'Espera de Refacciones', 'Pendiente de asignación'];
+      
+      if (!estatusPermitidos.includes(reporte.estatus)) {
+        alert('El chat solo está disponible para reportes en:\n- En Progreso\n- Espera de Refacciones\n- Pendiente de asignación');
+        return;
+      }
+
+      reporte.mensajesNoLeidos = 0;
+      const nuevoMensaje = prompt(`Chat para reporte ${folio}\n\nTécnico: ${reporte.tecnico}\n\nEscribe tu mensaje:`);
+      if (nuevoMensaje && nuevoMensaje.trim() !== '') {
+        reporte.mensajesNoLeidos = 1;
+      }
+      renderTabla();
+    }
+
+    // Event Listeners
+    perPageSelect.addEventListener('change', () => {
+      perPage = parseInt(perPageSelect.value);
+      currentPage = 1;
+      renderTabla();
+    });
+
+    busquedaInput.addEventListener('input', () => {
+      currentPage = 1;
+      renderTabla();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTabla();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const totalPages = Math.ceil(getFilteredData().length / perPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderTabla();
+      }
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const descripcion = descripcionInput.value.trim();
+      
+      if (descripcion.length < 10) {
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+      errorMsg.classList.add('hidden');
+
+      const nuevo = {
+        folio: String(folioActual++).padStart(5, "0"),
+        fecha: new Date().toISOString(),
+        descripcion,
+        tecnico: "Pendiente de asignación",
+        seguimiento: "Nuevo reporte creado",
+        estatus: "Pendiente de asignación",
+        mensajesNoLeidos: 0
+      };
+
+      reportes.unshift(nuevo);
+      descripcionInput.value = "";
+      currentPage = 1;
+      renderTabla();
+    });
+
+    // Carga inicial
+    if (reportes.length === 0) {
+      const estatusPosibles = [
+        'En Progreso', 
+        'Espera de Refacciones', 
+        'Pendiente de asignación',
+        'Resuelto',
+        'Cancelado'
+      ];
+      
+      for (let i = 1; i <= 24; i++) {
+        reportes.push({
+          folio: String(100 + i).padStart(5, "0"),
+          fecha: new Date().toISOString(),
+          descripcion: `Reporte de ejemplo ${i} - ${['Problema de red', 'Fallo en servidor', 'Error de software', 'Hardware dañado'][i % 4]}`,
+          tecnico: tecnicos[i % 5],
+          seguimiento: ['Diagnóstico inicial', 'Esperando aprobación', 'En revisión'][i % 3],
+          estatus: estatusPosibles[i % 5],
+          mensajesNoLeidos: Math.floor(Math.random() * 5)
+        });
+      }
+      folioActual = 130;
+    }
+
+    // Función para limpiar localStorage
+    function limpiarLocalStorage() {
+      if(confirm('¿Estás seguro de querer eliminar todos los datos? Se regenerarán los datos de ejemplo.')) {
+        localStorage.clear();
+        location.reload();
+      }
+    }
+
+    renderTabla();
+  </script>
+</body>
+</html>
