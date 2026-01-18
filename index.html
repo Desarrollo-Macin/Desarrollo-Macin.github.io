@@ -1,59 +1,939 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-MX" data-theme="dark">
   <head>
-    <title>Macin</title>
-    <link rel="stylesheet" href="index.css">
-    <div class="loader">
-      <div data-glitch="Trabajando..." class="glitch">Trabajando... </div>
-   </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Macín V. | Desarrollador Full Stack en CDMX - Python, Django, FastAPI</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Desarrollador Full Stack con +9 años de experiencia en Ciudad de México. Especialista en Python, Django, FastAPI, PHP, JavaScript, React y PostgreSQL. Creación de dashboards, APIs y aplicaciones web. Disponible para proyectos freelance.">
+    <meta name="keywords" content="desarrollador full stack, programador python, django developer, fastapi, desarrollo web cdmx, freelance méxico, react developer, postgresql, mysql, dashboards, apis rest, backend developer, frontend developer, ingeniero de datos, análisis de datos, devops">
+    <meta name="author" content="Eduardo Macín V.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="MX-CMX">
+    <meta name="geo.placename" content="Ciudad de México">
+    <meta name="geo.position" content="19.4326;-99.1332">
+    <meta name="ICBM" content="19.4326, -99.1332">
+    
+    <!-- Language & Content -->
+    <meta http-equiv="content-language" content="es-MX">
+    <meta name="language" content="Spanish">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Eduardo Macín V. | Desarrollador Full Stack - Python, Django, FastAPI">
+    <meta property="og:description" content="Desarrollador Full Stack con +9 años de experiencia. Especialista en Python, Django, FastAPI, PHP y JavaScript. Creación de dashboards y aplicaciones orientadas a datos. Disponible en CDMX.">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:image:alt" content="Eduardo Macín V. - Desarrollador Full Stack">
+    <meta property="og:url" content="https://desarrollo-macin.github.io">
+    <meta property="og:site_name" content="Eduardo Macín V. - Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@MacinDev">
+    <meta name="twitter:creator" content="@MacinDev">
+    <meta name="twitter:title" content="Eduardo Macín V. | Desarrollador Full Stack">
+    <meta name="twitter:description" content="Desarrollador Full Stack con +9 años de experiencia en Python, Django, FastAPI, PHP y JavaScript. Disponible para proyectos en CDMX.">
+    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg">
+    <meta name="twitter:image:alt" content="Eduardo Macín V. - Desarrollador Full Stack">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg">
+    <link rel="apple-touch-icon" href="https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://desarrollo-macin.github.io">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://pbs.twimg.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Structured Data - JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Eduardo Macín V.",
+      "alternateName": "MacinDev",
+      "description": "Desarrollador Full Stack con +9 años de experiencia especializado en Python, Django, FastAPI, PHP y JavaScript",
+      "url": "https://desarrollo-macin.github.io",
+      "image": "https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg",
+      "jobTitle": "Desarrollador Full Stack",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "email": "devmacin@protonmail.com",
+      "telephone": "+52-55-4532-9828",
+      "sameAs": [
+        "https://x.com/MacinDev",
+        "https://www.instagram.com/macindev/",
+        "https://github.com/Desarrollo-Macin"
+      ],
+      "knowsAbout": [
+        "Python", "Django", "FastAPI", "PHP", "JavaScript", "React",
+        "PostgreSQL", "MySQL", "Docker", "Git", "APIs REST", "Dashboards",
+        "Análisis de Datos", "DevOps", "Full Stack Development"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full Stack Developer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Ciudad de México"
+        },
+        "skills": "Python, Django, FastAPI, PHP, JavaScript, React, PostgreSQL, MySQL, Docker, Git"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Eduardo Macín V. - Portfolio",
+      "url": "https://desarrollo-macin.github.io",
+      "description": "Portfolio profesional de Eduardo Macín V., Desarrollador Full Stack en Ciudad de México",
+      "author": {
+        "@type": "Person",
+        "name": "Eduardo Macín V."
+      },
+      "inLanguage": "es-MX"
+    }
+    </script>
+    
+    <!-- Tailwind CSS CDN con configuración personalizada -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'accent': '#04bc84',
+              'accentLight': '#7bd3e9',
+              'primaryDark': '#255565',
+              'secondary': '#4a84ac',
+              'lightGray': '#bed3dc',
+              'darkTeal': '#345c58',
+              // Aliases para compatibilidad
+              'accent-light': '#7bd3e9',
+              'primary': '#255565',
+              'light-gray': '#bed3dc',
+              'dark-teal': '#345c58',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Critical CSS - Aplicar tema oscuro inmediatamente -->
+    <style>
+      /* Variables tema oscuro - crítico para evitar flash */
+      html[data-theme="dark"],
+      body[data-theme="dark"] {
+        --bg-primary: #1a2830;
+        --bg-card: #243640;
+        --card-bg: #243640;
+        background-color: #1a2830 !important;
+      }
+      html[data-theme="dark"] body {
+        background-color: #1a2830 !important;
+      }
+    </style>
+    
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="style/main.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- EmailJS para formulario de contacto -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
-  <body>
-    <div class="box-of-star1">
-      <div class="star star-position1"></div>
-      <div class="star star-position2"></div>
-      <div class="star star-position3"></div>
-      <div class="star star-position4"></div>
-      <div class="star star-position5"></div>
-      <div class="star star-position6"></div>
-      <div class="star star-position7"></div>
-    </div>
-    <div class="box-of-star2">
-      <div class="star star-position1"></div>
-      <div class="star star-position2"></div>
-      <div class="star star-position3"></div>
-      <div class="star star-position4"></div>
-      <div class="star star-position5"></div>
-      <div class="star star-position6"></div>
-      <div class="star star-position7"></div>
-    </div>
-    <div class="box-of-star3">
-      <div class="star star-position1"></div>
-      <div class="star star-position2"></div>
-      <div class="star star-position3"></div>
-      <div class="star star-position4"></div>
-      <div class="star star-position5"></div>
-      <div class="star star-position6"></div>
-      <div class="star star-position7"></div>
-    </div>
-    <div class="box-of-star4">
-      <div class="star star-position1"></div>
-      <div class="star star-position2"></div>
-      <div class="star star-position3"></div>
-      <div class="star star-position4"></div>
-      <div class="star star-position5"></div>
-      <div class="star star-position6"></div>
-      <div class="star star-position7"></div>
-    </div>
-    <div data-js="astro" class="astronaut">
-      <div class="head"></div>
-      <div class="arm arm-left"></div>
-      <div class="arm arm-right"></div>
-      <div class="body">
-        <div class="panel"></div>
+  <body data-theme="dark">
+    <!-- Theme Toggle Button (Mobile) -->
+    <button class="theme-toggle-mobile" id="theme-toggle-mobile" aria-label="Cambiar tema">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Preloader GTA V Style -->
+    <div id="preloader" class="preloader-gta">
+      <!-- Background Image -->
+      <div class="gta-background">
+        <img src="https://pbs.twimg.com/media/G-6bnBuWwAA-7tB?format=jpg&name=large" alt="Loading Background" class="gta-bg-image">
+        <div class="gta-overlay"></div>
+        <div class="gta-vignette"></div>
       </div>
-      <div class="leg leg-left"></div>
-      <div class="leg leg-right"></div>
-      <div class="schoolbag"></div>
+      
+      <!-- Content -->
+      <div class="gta-content">
+        <!-- Logo/Title -->
+        <div class="gta-logo">
+          <span class="gta-name">EDUARDO MACÍN</span>
+          <span class="gta-subtitle">DEVELOPER</span>
+        </div>
+        
+        <!-- Loading Bar Container -->
+        <div class="gta-loader-container">
+          <div class="gta-loading-text">
+            <span id="loading-message">CARGANDO EXPERIENCIA</span>
+            <span class="gta-dots">...</span>
+          </div>
+          <div class="gta-progress-bar">
+            <div class="gta-progress-fill" id="gta-progress"></div>
+          </div>
+          <div class="gta-progress-info">
+            <span id="progress-percent">0%</span>
+            <span class="gta-tip" id="loading-tip">Presiona cualquier tecla para continuar</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Corner Decorations -->
+      <div class="gta-corner gta-corner-tl"></div>
+      <div class="gta-corner gta-corner-tr"></div>
+      <div class="gta-corner gta-corner-bl"></div>
+      <div class="gta-corner gta-corner-br"></div>
     </div>
+
+    <!-- Sidebar Navigation -->
+    <header id="navbar">
+      <!-- Brand Section -->
+      <div class="navbar-brand">
+        <img src="https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg" 
+             alt="Eduardo Macín V." 
+             class="w-20 h-20 rounded-2xl object-cover shadow-lg border-2 border-accent/30 mb-3">
+        <h1>Eduardo Macín V.</h1>
+        <p>Full Stack Developer</p>
+        <!-- Social Links -->
+        <div class="flex gap-3 mt-3">
+          <a href="https://x.com/MacinDev" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 bg-primaryDark/10 hover:bg-accent rounded-lg flex items-center justify-center transition-all hover:scale-110" 
+             title="X (Twitter)">
+            <i class="fab fa-x-twitter text-primaryDark hover:text-white"></i>
+          </a>
+          <a href="https://www.instagram.com/macindev/" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 bg-primaryDark/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center transition-all hover:scale-110" 
+             title="Instagram">
+            <i class="fab fa-instagram text-primaryDark hover:text-white"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="navbar-nav">
+        <div class="nav-item">
+          <a class="nav-link-lateral active" onclick="goToSection(0)" data-section="0">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link-lateral" onclick="goToSection(1)" data-section="1">
+            <i class="fas fa-briefcase"></i>
+            <span>Proyectos</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link-lateral" onclick="goToSection(2)" data-section="2">
+            <i class="fas fa-envelope"></i>
+            <span>Contacto</span>
+          </a>
+        </div>
+        <!-- Theme Toggle -->
+        <div class="nav-item theme-toggle-container">
+          <button class="theme-toggle-sidebar" id="theme-toggle" aria-label="Cambiar tema">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span>Tema</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Status Section -->
+      <div class="navbar-status">
+        <div class="status-item">
+          <div class="status-indicator"></div>
+          <span class="text-sm text-darkTeal font-medium">Disponible para proyectos</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Carousel Container -->
+    <main class="carousel-container" role="main">
+      <div class="carousel-wrapper" id="carousel-wrapper">
+
+        <!-- Section 1: Dashboard Main + Skills Combined -->
+        <section id="home" class="carousel-section" aria-label="Inicio - Información principal">
+          <div class="container-responsive section-responsive">
+            <!-- Dashboard Stats Cards -->
+            <div class="stats-grid-mobile stagger-animation" role="region" aria-label="Estadísticas profesionales">
+              <div class="dashboard-card stats-card-1 card-tilt">
+                <div class="stats-card-mobile">
+                  <div class="flex-1 min-w-0">
+                    <p class="stats-label text-[10px] md:text-xs font-medium mb-0.5 md:mb-1">Experiencia</p>
+                    <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold stats-value">
+                      <span data-counter="9" data-suffix="+">0+</span> Años
+                    </p>
+                  </div>
+                  <div class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 stats-icon-bg rounded-lg flex items-center justify-center flex-shrink-0 animate-float">
+                    <i class="fas fa-calendar-alt stats-icon text-sm md:text-base lg:text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="dashboard-card stats-card-2 card-tilt">
+                <div class="stats-card-mobile">
+                  <div class="flex-1 min-w-0">
+                    <p class="stats-label text-[10px] md:text-xs font-medium mb-0.5 md:mb-1">Proyectos</p>
+                    <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold stats-value">
+                      <span data-counter="15" data-suffix="+">0+</span>
+                    </p>
+                  </div>
+                  <div class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 stats-icon-bg rounded-lg flex items-center justify-center flex-shrink-0 animate-float">
+                    <i class="fas fa-project-diagram stats-icon text-sm md:text-base lg:text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="dashboard-card stats-card-3 card-tilt">
+                <div class="stats-card-mobile">
+                  <div class="flex-1 min-w-0">
+                    <p class="stats-label text-[10px] md:text-xs font-medium mb-0.5 md:mb-1">Tecnologías</p>
+                    <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold stats-value">
+                      <span data-counter="12" data-suffix="+">0+</span>
+                    </p>
+                  </div>
+                  <div class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 stats-icon-bg rounded-lg flex items-center justify-center flex-shrink-0 animate-float">
+                    <i class="fas fa-code stats-icon text-sm md:text-base lg:text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="dashboard-card stats-card-4 card-tilt">
+                <div class="stats-card-mobile">
+                  <div class="flex-1 min-w-0">
+                    <p class="stats-label text-[10px] md:text-xs font-medium mb-0.5 md:mb-1">Estado</p>
+                    <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-accent neon-glow">Disponible</p>
+                  </div>
+                  <div class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-accent/30 rounded-lg flex items-center justify-center flex-shrink-0 animate-glow">
+                    <i class="fas fa-user-check text-accent text-sm md:text-base lg:text-xl"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main Dashboard Content -->
+            <div class="hero-section">
+              <!-- Profile Card - Hero Style -->
+              <div class="dashboard-card hero-card relative overflow-hidden">
+                <!-- Animated Background Pattern -->
+                <div class="hero-pattern"></div>
+                <div class="hero-glow"></div>
+                
+                <div class="relative z-10">
+                  <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
+                    <!-- Profile Image with Ring -->
+                    <div class="profile-image-container">
+                      <div class="profile-ring"></div>
+                      <img src="https://pbs.twimg.com/profile_images/2012250561479925760/2jj0K3qz_400x400.jpg" 
+                           alt="Eduardo Macín V." 
+                           class="profile-image-hero">
+                      <div class="profile-status-badge">
+                        <span class="status-dot"></span>
+                        Disponible
+                      </div>
+                    </div>
+                    
+                    <!-- Info -->
+                    <div class="flex-1 text-center lg:text-left">
+                      <p class="text-accent text-xs md:text-sm font-medium mb-1 md:mb-2 tracking-wider uppercase">¡Hola! Soy</p>
+                      <h1 class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold hero-title-text mb-2 hero-title">
+                        Eduardo Macín V.
+                      </h1>
+                      <div class="typing-container mb-2 md:mb-3">
+                        <span class="text-base md:text-lg lg:text-xl text-accentLight font-medium" id="typed-text"></span>
+                        <span class="typing-cursor">|</span>
+                      </div>
+                      <p class="hero-description text-xs md:text-sm leading-relaxed max-w-6xl mb-3 md:mb-4">
+                        Desarrollador Full Stack con formación en Ingeniería en Análisis de Datos y Matemáticas Aplicadas.
+                         Experiencia en la creación de dashboards, mantenimiento y desarrollo de software, 
+                         con enfoque en la construcción de aplicaciones orientadas a datos que apoyen la toma de decisiones y 
+                         optimicen procesos de negocio.
+                         
+                         Emprendedor en el área de impresión 3D, con experiencia en gestión de proyectos, 
+                         optimización de procesos y atención a clientes, utilizando la tecnología para resolver necesidades reales. 
+                         Cuento con sólidos conocimientos en servicio técnico IT, soporte de sistemas y mantenimiento de hardware y software, 
+                         lo que me permite integrar desarrollo, análisis y operación tecnológica de manera eficiente.
+                      </p>
+                      
+                      <!-- CTA Buttons -->
+                      <div class="flex flex-wrap gap-2 md:gap-3 justify-center lg:justify-start">
+                        <button onclick="goToSection(2)" class="cta-button primary">
+                          <i class="fas fa-paper-plane mr-2"></i>Contáctame
+                        </button>
+                        <button onclick="goToSection(1)" class="cta-button secondary">
+                          <i class="fas fa-folder-open mr-2"></i>Ver Proyectos
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Location Badge -->
+                  <div class="mt-3 md:mt-4 flex items-center justify-center lg:justify-start gap-3 md:gap-4 text-xs md:text-sm hero-location">
+                    <span class="flex items-center gap-2">
+                      <i class="fas fa-map-marker-alt text-accent"></i>
+                      Ciudad de México, México
+                    </span>
+                    <span class="hidden sm:flex items-center gap-2">
+                      <i class="fas fa-clock text-accent"></i>
+                      <span id="current-time">--:--</span> hrs
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="bento-grid">
+              <!-- Quick Contact - Bento Item -->
+              <div class="bento-item bento-contact">
+                <div class="dashboard-card h-full">
+                  <h3 class="text-sm md:text-base card-title mb-2 md:mb-3 flex items-center font-semibold">
+                    <i class="fas fa-bolt mr-2 text-accent text-xs md:text-sm"></i>Contacto Rápido
+                  </h3>
+                  <div class="space-y-2 md:space-y-2">
+                    <a href="mailto:devmacin@protonmail.com" class="bento-link-item">
+                      <div class="bento-link-icon bg-accent/30">
+                        <i class="fas fa-envelope text-accent text-xs"></i>
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-[10px] md:text-xs bento-link-label">Email</p>
+                        <p class="text-xs md:text-sm font-medium bento-link-value truncate">devmacin@protonmail.com</p>
+                      </div>
+                    </a>
+                    <a href="tel:+525545329828" class="bento-link-item">
+                      <div class="bento-link-icon bg-accentLight/30">
+                        <i class="fas fa-phone text-accentLight text-xs"></i>
+                      </div>
+                      <div>
+                        <p class="text-[10px] md:text-xs bento-link-label">Teléfono</p>
+                        <p class="text-xs md:text-sm font-medium bento-link-value">55 4532 9828</p>
+                      </div>
+                    </a>
+                    <div class="flex gap-2 mt-2 md:mt-3">
+                      <a href="https://x.com/MacinDev" target="_blank" class="bento-social-btn">
+                        <i class="fab fa-x-twitter text-xs"></i>
+                      </a>
+                      <a href="https://www.instagram.com/macindev/" target="_blank" class="bento-social-btn instagram">
+                        <i class="fab fa-instagram text-xs"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Backend - Bento Item -->
+              <div class="bento-item bento-backend">
+                <div class="dashboard-card h-full skill-card backend-card">
+                  <div class="flex items-center justify-between mb-2 md:mb-3">
+                    <h3 class="text-sm md:text-base font-semibold text-primaryDark flex items-center">
+                      <div class="skill-icon-wrapper bg-accent/10 mr-2">
+                        <i class="fas fa-server text-accent text-xs"></i>
+                      </div>
+                      Backend
+                    </h3>
+                    <span class="skill-level dark">Avanzado</span>
+                  </div>
+                  <div class="skill-tags-grid">
+                    <span class="skill-tag-modern dark"><i class="fab fa-python mr-1"></i>Python</span>
+                    <span class="skill-tag-modern dark"><i class="fas fa-fire mr-1"></i>Django</span>
+                    <span class="skill-tag-modern dark"><i class="fas fa-bolt mr-1"></i>FastAPI</span>
+                    <span class="skill-tag-modern dark"><i class="fab fa-php mr-1"></i>PHP</span>
+                    <span class="skill-tag-modern dark"><i class="fas fa-database mr-1"></i>PostgreSQL</span>
+                    <span class="skill-tag-modern dark"><i class="fas fa-database mr-1"></i>MySQL</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Frontend - Bento Item -->
+              <div class="bento-item bento-frontend">
+                <div class="dashboard-card h-full skill-card frontend-card">
+                  <div class="flex items-center justify-between mb-2 md:mb-3">
+                    <h3 class="text-sm md:text-base font-semibold text-primaryDark flex items-center">
+                      <div class="skill-icon-wrapper bg-accent/10 mr-2">
+                        <i class="fas fa-palette text-accent text-xs"></i>
+                      </div>
+                      Frontend
+                    </h3>
+                    <span class="skill-level dark">Avanzado</span>
+                  </div>
+                  <div class="skill-tags-grid">
+                    <span class="skill-tag-modern dark"><i class="fab fa-js mr-1"></i>JavaScript</span>
+                    <span class="skill-tag-modern dark"><i class="fab fa-react mr-1"></i>React</span>
+                    <span class="skill-tag-modern dark"><i class="fab fa-vuejs mr-1"></i>Vue.js</span>
+                    <span class="skill-tag-modern dark"><i class="fas fa-wind mr-1"></i>Tailwind</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Tools - Bento Item -->
+              <div class="bento-item bento-tools">
+                <div class="dashboard-card h-full skill-card devops-card">
+                  <div class="flex items-center justify-between mb-2 md:mb-3">
+                    <h3 class="text-sm md:text-base font-semibold text-darkTeal flex items-center">
+                      <div class="skill-icon-wrapper bg-accent/10 mr-2">
+                        <i class="fas fa-tools text-accent text-xs"></i>
+                      </div>
+                      DevOps
+                    </h3>
+                    <span class="skill-level dark">Pro</span>
+                  </div>
+                  <div class="skill-tags-grid">
+                    <span class="skill-tag-modern dark"><i class="fab fa-git-alt mr-1"></i>Git</span>
+                    <span class="skill-tag-modern dark"><i class="fab fa-docker mr-1"></i>Docker</span>
+                    <span class="skill-tag-modern dark"><i class="fab fa-aws mr-1"></i>AWS</span>
+                    <span class="skill-tag-modern dark"><i class="fab fa-linux mr-1"></i>Linux</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <!-- Section 2: Projects Dashboard -->
+        <section id="projects" class="carousel-section" aria-label="Proyectos y portafolio">
+          <div class="container-responsive section-responsive">
+            <!-- Projects Header Card -->
+            <article class="dashboard-card">
+              <div class="skills-header-mobile">
+                <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-primaryDark flex items-center">
+                  <i class="fas fa-project-diagram mr-2 md:mr-3 text-accent text-base md:text-lg"></i>Últimos Proyectos
+                </h2>
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-3">
+                  <span class="contact-badge text-xs md:text-sm">
+                    <i class="fas fa-chart-bar mr-1"></i>15+ Proyectos
+                  </span>
+                  <span class="contact-badge primary text-xs md:text-sm">
+                    <i class="fas fa-clock mr-1"></i>Actualizado
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Private Projects Notice -->
+            <div class="dashboard-card projects-notice">
+              <div class="flex items-start gap-2 md:gap-3">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primaryDark to-darkTeal rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-lock text-white text-xs md:text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-primaryDark font-semibold text-sm md:text-base mb-1 flex items-center gap-2">
+                    Nota sobre Proyectos
+                    <span class="contact-badge">Confidencial</span>
+                  </h3>
+                  <p class="text-darkTeal text-xs md:text-sm leading-relaxed">
+                    La mayoría de mis proyectos han sido desarrollados bajo <strong class="text-primaryDark">contratos de confidencialidad (NDA)</strong> 
+                    para empresas y clientes privados. Los proyectos mostrados aquí son ejemplos representativos donde tengo autorización.
+                  </p>
+                  <div class="flex flex-wrap gap-1.5 md:gap-2 mt-2">
+                    <span class="notice-tag">
+                      <i class="fas fa-building text-accent"></i> Corporativos
+                    </span>
+                    <span class="notice-tag">
+                      <i class="fas fa-file-signature text-accent"></i> Bajo NDA
+                    </span>
+                    <span class="notice-tag">
+                      <i class="fas fa-handshake text-accent"></i> Referencias
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid-modern">
+            <!-- Project Card 1 - Featured -->
+            <div class="project-card-modern">
+              <div class="project-card-glow"></div>
+              <div class="project-card-content">
+                <div class="project-header">
+                  <div class="project-icon education">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="project-badges">
+                    <span class="project-badge live"><i class="fas fa-circle"></i> Activo</span>
+                    <span class="project-badge type">Sistema</span>
+                  </div>
+                </div>
+                
+                <h3 class="project-title">Sistema de Soporte Técnico</h3>
+                <p class="project-subtitle">Plataforma de Gestión de Tickets</p>
+                
+                <p class="project-description">
+                  Sistema integral de gestión de soporte técnico con interfaz moderna, 
+                  gestión de tickets, panel administrativo y generación de reportes.
+                </p>
+                
+                <div class="project-tech-stack">
+                  <span class="tech-pill"><i class="fab fa-php"></i> PHP 5</span>
+                  <span class="tech-pill"><i class="fas fa-fire"></i> CodeIgniter</span>
+                  <span class="tech-pill"><i class="fas fa-wind"></i> Tailwind</span>
+                  <span class="tech-pill"><i class="fab fa-js"></i> JavaScript</span>
+                </div>
+                
+                <div class="project-footer">
+                  <div class="project-stats">
+                    <span><i class="fas fa-code-branch"></i> Frontend</span>
+                    <span><i class="fas fa-check-circle"></i> 100%</span>
+                  </div>
+                  <a href="holmes.html" target="_blank" class="project-link">
+                    Ver Demo <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="project-card-modern">
+              <div class="project-card-glow"></div>
+              <div class="project-card-content">
+                <div class="project-header">
+                  <div class="project-icon education">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="project-badges">
+                    <span class="project-badge live"><i class="fas fa-circle"></i> En línea</span>
+                    <span class="project-badge type">Web</span>
+                  </div>
+                </div>
+                
+                <h3 class="project-title">Colegio Álamos Cancún</h3>
+                <p class="project-subtitle">Sitio Web Institucional</p>
+                
+                <p class="project-description">
+                  Sitio web institucional con cobertura completa de niveles educativos, 
+                  oferta académica bilingüe, admisiones y optimización SEO.
+                </p>
+                
+                <div class="project-tech-stack">
+                  <span class="tech-pill"><i class="fab fa-html5"></i> HTML5</span>
+                  <span class="tech-pill"><i class="fab fa-css3-alt"></i> CSS3</span>
+                  <span class="tech-pill"><i class="fab fa-php"></i> PHP</span>
+                  <span class="tech-pill"><i class="fas fa-database"></i> MySQL</span>
+                </div>
+                
+                <div class="project-footer">
+                  <div class="project-stats">
+                    <span><i class="fas fa-layer-group"></i> Full Stack</span>
+                    <span><i class="fas fa-check-circle"></i> 100%</span>
+                  </div>
+                  <a href="https://colegioalamoscancun.com.mx/" target="_blank" class="project-link">
+                    Visitar <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Analytics -->
+          <div class="dashboard-card">
+            <h3 class="text-responsive font-semibold text-primaryDark mb-4 sm:mb-6 flex items-center">
+              <i class="fas fa-chart-line mr-2 text-accent icon-responsive icon-hover-rotate"></i>Métricas de Proyectos
+            </h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-responsive stagger-animation">
+              <div class="text-center card-spacing-mobile metric-card card-tilt">
+                <div class="text-2xl sm:text-3xl font-bold text-accent mb-1">
+                  <span data-counter="15" data-suffix="+">0+</span>
+                </div>
+                <div class="text-sm sm:text-base text-darkTeal">Proyectos Totales</div>
+              </div>
+              <div class="text-center card-spacing-mobile metric-card card-tilt">
+                <div class="text-2xl sm:text-3xl font-bold text-accent mb-1">
+                  <span data-counter="12" data-suffix="">0</span>
+                </div>
+                <div class="text-sm sm:text-base text-darkTeal">Completados</div>
+              </div>
+              <div class="text-center card-spacing-mobile metric-card card-tilt">
+                <div class="text-2xl sm:text-3xl font-bold text-accent mb-1">
+                  <span data-counter="3" data-suffix="">0</span>
+                </div>
+                <div class="text-sm sm:text-base text-darkTeal">En Desarrollo</div>
+              </div>
+              <div class="text-center card-spacing-mobile metric-card card-tilt">
+                <div class="text-2xl sm:text-3xl font-bold text-accent mb-1">
+                  <span data-counter="98" data-suffix="%">0%</span>
+                </div>
+                <div class="text-sm sm:text-base text-darkTeal">Tasa de Éxito</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+      <!-- Section 3: Contact Dashboard -->
+        <section id="contact" class="carousel-section" aria-label="Información de contacto">
+          <div class="container-responsive section-responsive">
+            <!-- Contact Header Card -->
+            <article class="dashboard-card">
+              <div class="skills-header-mobile">
+                <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-primaryDark flex items-center">
+                  <i class="fas fa-headset mr-2 md:mr-3 text-accent text-base md:text-lg"></i>Centro de Contacto
+                </h2>
+                <div class="flex items-center gap-2 md:gap-3">
+                  <div class="w-2 h-2 md:w-3 md:h-3 bg-accent rounded-full animate-pulse"></div>
+                  <span class="text-xs md:text-sm text-accent font-medium">Disponible 24/7</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Contact Content Grid -->
+            <div class="contact-grid-mobile">
+            <!-- Contact Information Dashboard -->
+            <div class="space-y-2 md:space-y-3 lg:space-y-4 order-2 lg:order-1">
+              <!-- Contact Information Card -->
+              <div class="dashboard-card">
+                <h3 class="text-sm md:text-base font-semibold text-primaryDark mb-2 md:mb-3 flex items-center">
+                  <i class="fas fa-address-book mr-2 text-accent text-xs md:text-sm"></i>Información de Contacto
+                </h3>
+                
+                <div class="space-y-2 md:space-y-3">
+                  <div class="dashboard-card nested-card">
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-accent to-accent/70 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-envelope text-white text-xs md:text-sm"></i>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                          <div class="min-w-0 flex-1">
+                            <h4 class="font-semibold text-primaryDark text-xs md:text-sm">Email Principal</h4>
+                            <a href="mailto:devmacin@protonmail.com" class="text-accent hover:text-accent/80 transition-colors text-xs md:text-sm text-break">
+                              devmacin@protonmail.com
+                            </a>
+                          </div>
+                          <span class="contact-badge">Activo</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="dashboard-card nested-card">
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primaryDark to-primaryDark/70 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-phone text-white text-xs md:text-sm"></i>
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                          <div>
+                            <h4 class="font-semibold text-primaryDark text-xs md:text-sm">Teléfono</h4>
+                            <a href="tel:+525545329828" class="text-accent hover:text-accent/80 transition-colors text-xs md:text-sm">
+                              55 4532 9828
+                            </a>
+                          </div>
+                          <span class="contact-badge">Disponible</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="dashboard-card nested-card">
+                    <div class="flex items-center gap-2 md:gap-3">
+                      <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-darkTeal to-darkTeal/70 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-map-marker-alt text-white text-xs md:text-sm"></i>
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-semibold text-primaryDark text-xs md:text-sm">Ubicación</h4>
+                        <p class="text-darkTeal text-xs md:text-sm">Ciudad de México, México</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Social Media Card -->
+              <div class="dashboard-card">
+                <h3 class="text-sm md:text-base font-semibold text-primaryDark mb-2 md:mb-3 flex items-center">
+                  <i class="fas fa-clock mr-2 text-accent text-xs md:text-sm"></i>Redes Sociales
+                </h3>
+                <div class="grid grid-cols-2 gap-2 md:gap-3">
+                  <a href="https://x.com/MacinDev" target="_blank" rel="noopener noreferrer" 
+                     class="flex items-center gap-2 p-2 md:p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all hover:scale-105">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fab fa-x-twitter text-white text-sm md:text-lg"></i>
+                    </div>
+                    <div>
+                      <p class="text-[10px] md:text-xs text-darkTeal">X (Twitter)</p>
+                      <p class="text-xs md:text-sm font-medium text-darkTeal">@MacinDev</p>
+                    </div>
+                  </a>
+                  <a href="https://www.instagram.com/macindev/" target="_blank" rel="noopener noreferrer" 
+                     class="flex items-center gap-2 p-2 md:p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all hover:scale-105">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fab fa-instagram text-white text-sm md:text-lg"></i>
+                    </div>
+                    <div>
+                      <p class="text-[10px] md:text-xs text-darkTeal">Instagram</p>
+                      <p class="text-xs md:text-sm font-medium text-darkTeal">@macindev</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Response Time Stats Card -->
+              <div class="dashboard-card">
+                <h3 class="text-sm md:text-base font-semibold text-primaryDark mb-2 md:mb-3 flex items-center">
+                  <i class="fas fa-clock mr-2 text-accent text-xs md:text-sm"></i>Tiempos de Respuesta
+                </h3>
+                <div class="space-y-2 md:space-y-2.5">
+                  <div class="flex justify-between items-center">
+                    <span class="text-darkTeal text-xs md:text-sm">Email</span>
+                    <span class="contact-badge">≤ 2 horas</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-darkTeal text-xs md:text-sm">Teléfono</span>
+                    <span class="contact-badge primary">Inmediato</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-darkTeal text-xs md:text-sm">Formulario</span>
+                    <span class="contact-badge">≤ 1 hora</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contact Form Dashboard -->
+            <div class="dashboard-card order-1 lg:order-2">
+              <div class="skills-header-mobile">
+                <h3 class="text-sm md:text-base font-semibold text-primaryDark flex items-center">
+                  <i class="fas fa-paper-plane mr-2 text-accent text-xs md:text-sm"></i>Enviar Mensaje
+                </h3>   
+              </div>
+              
+              <form id="contact-form" class="form-responsive">
+                <div class="form-group">
+                  <label class="block text-xs md:text-sm font-medium text-primaryDark mb-1 md:mb-1.5">Nombre completo</label>
+                  <input 
+                    type="text" 
+                    name="from_name" 
+                    placeholder="Tu nombre completo" 
+                    required
+                    class="form-input-mobile keyboard-only-focus"
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="block text-xs md:text-sm font-medium text-primaryDark mb-1 md:mb-1.5">Correo electrónico</label>
+                  <input 
+                    type="email" 
+                    name="reply_to" 
+                    placeholder="tu.email@ejemplo.com" 
+                    required
+                    class="form-input-mobile keyboard-only-focus"
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="block text-xs md:text-sm font-medium text-primaryDark mb-1 md:mb-1.5">Mensaje</label>
+                  <textarea 
+                    name="message" 
+                    placeholder="Describe tu proyecto o consulta..." 
+                    rows="3" 
+                    required
+                    class="form-input-mobile resize-none keyboard-only-focus"
+                  ></textarea>
+                </div>
+                
+                <!-- Hidden fields -->
+                <input type="hidden" name="from_email" value="noreply@desarrollo-macin.github.io">
+                <input type="hidden" name="website_name" value="CV Eduardo Macín">
+                
+                <button 
+                  type="submit" 
+                  id="submit-btn"
+                  class="btn-responsive w-full bg-accent text-white hover:bg-accentLight text-xs md:text-sm py-2 md:py-2.5"
+                >
+                  <span id="btn-text" class="flex items-center justify-center">
+                    <i class="fas fa-paper-plane mr-1.5 text-xs md:text-sm"></i>Enviar Mensaje
+                  </span>
+                  <span id="btn-loading" class="hidden flex items-center justify-center">
+                    <i class="fas fa-spinner fa-spin mr-1.5 text-xs md:text-sm"></i>Enviando...
+                  </span>
+                </button>
+              </form>
+              
+              <div id="form-status" class="mt-2 md:mt-3 hidden"></div>
+              
+              <!-- Form Info -->
+              <div class="mt-2 md:mt-3 p-2 md:p-3 form-info-box">
+                <div class="flex items-start gap-2">
+                  <i class="fas fa-info-circle text-accent mt-0.5 text-xs md:text-sm"></i>
+                  <div class="text-xs text-darkTeal">
+                    <p class="font-medium mb-1">Información del formulario:</p>
+                    <ul class="text-[10px] md:text-xs space-y-0.5">
+                      <li>• Respuesta automática confirmada</li>
+                      <li>• Notificación inmediata al desarrollador</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+    </div>
+  </div>
+    </main>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav md:hidden" aria-label="Navegación móvil">
+      <button class="mobile-nav-btn" onclick="goToSection(0)" data-section="0" aria-label="Ir a Inicio">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        <span>Inicio</span>
+      </button>
+      <button class="mobile-nav-btn" onclick="goToSection(1)" data-section="1" aria-label="Ir a Proyectos">
+        <i class="fas fa-briefcase" aria-hidden="true"></i>
+        <span>Proyectos</span>
+      </button>
+      <button class="mobile-nav-btn" onclick="goToSection(2)" data-section="2" aria-label="Ir a Contacto">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span>Contacto</span>
+      </button>
+    </nav>
+
+    <!-- Section Indicators (visible on all screens) 
+    <div class="section-indicators">
+      <button class="indicator active" onclick="goToSection(0)" aria-label="Sección 1"></button>
+      <button class="indicator" onclick="goToSection(1)" aria-label="Sección 2"></button>
+      <button class="indicator" onclick="goToSection(2)" aria-label="Sección 3"></button>
+    </div>
+-->
+
+    <!-- Footer for SEO -->
+    <footer class="sr-only" aria-label="Información del sitio">
+      <p>© 2024-2026 Eduardo Macín V. - Desarrollador Full Stack en Ciudad de México, México</p>
+      <p>Especializado en Python, Django, FastAPI, PHP, JavaScript, React, PostgreSQL y MySQL</p>
+      <p>Contacto: devmacin@protonmail.com | Tel: +52 55 4532 9828</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script/main.js"></script>
   </body>
 </html>
