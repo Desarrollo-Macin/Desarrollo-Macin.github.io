@@ -203,6 +203,7 @@ function initGTAPreloader() {
 function initTheme() {
   const themeToggle = document.getElementById('theme-toggle');
   const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const themeToggleNav = document.getElementById('theme-toggle-nav');
   
   // Obtener tema guardado
   const savedTheme = localStorage.getItem('theme');
@@ -222,9 +223,14 @@ function initTheme() {
     themeToggle.addEventListener('click', toggleTheme);
   }
   
-  // Event listener para el botón de toggle (móvil)
+  // Event listener para el botón de toggle (móvil flotante)
   if (themeToggleMobile) {
     themeToggleMobile.addEventListener('click', toggleTheme);
+  }
+  
+  // Event listener para el botón de toggle (barra de navegación móvil)
+  if (themeToggleNav) {
+    themeToggleNav.addEventListener('click', toggleTheme);
   }
   
   // Aplicar estilos de skill cards según tema inicial

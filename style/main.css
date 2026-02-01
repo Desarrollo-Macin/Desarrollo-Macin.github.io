@@ -3512,6 +3512,29 @@ body:not([data-theme="dark"]) .project-card-modern {
   .theme-toggle-container {
     display: none;
   }
+  
+  /* Ocultar botón flotante en móvil */
+  .theme-toggle-mobile {
+    display: none;
+  }
+}
+
+/* Botón de tema en la barra de navegación móvil */
+.mobile-nav-btn.theme-btn-mobile .fa-sun {
+  display: none;
+  color: #fbbf24;
+}
+
+.mobile-nav-btn.theme-btn-mobile .fa-moon {
+  display: block;
+}
+
+[data-theme="dark"] .mobile-nav-btn.theme-btn-mobile .fa-sun {
+  display: block;
+}
+
+[data-theme="dark"] .mobile-nav-btn.theme-btn-mobile .fa-moon {
+  display: none;
 }
 
 /* ========================================
